@@ -1,19 +1,18 @@
 
-module.exports = (bs,req, res, next) =>
-{
-  try{
+module.exports = (bs, req, res, next) => {
+  try {
     // res.write(Object.keys(req).join(' '))
-    req.allData = "SUPER !!!!!!!!!!!!!!!!!! + <br> "  + Object.keys(req).join("<br>") + new Array(5).join("<br>")
+    req.allData = 'SUPER !!!!!!!!!!!!!!!!!! + <br> ' + Object.keys(req).join('<br>') + new Array(5).join('<br>')
   } catch (e) {
     req.allData = (e.toString())
   }
-  return next();
+  return next()
 }
 module.exports.deregister = () => {
-  console.log("Deregister")
+  console.log('Deregister')
 }
 
 module.exports.register = (bs) => {
-    console.log("Register");
-    bs.reload()
+  console.log('Register')
+  bs.reload()
 }
